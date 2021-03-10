@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f5f5;
+}
+
+.card-wrapper {
+    width: 70%;
+    height: 70%;
+    text-align: center;
+    background-color: #8a8a8a;
+    border-radius: 5px;
+}
+
+.card-wrapper h4 {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.card-wrapper h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    font-size: 30px;
+    color: aqua;
+}
+
+.card-wrapper .card {
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    border: 2px solid #02ffff;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.card img {
+    border-radius: 50%;
+    margin-top: -1.6rem;
+}
+
+.card .name {
+    font-size: 35px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card .rating {
+    font-size: 20px;
+    color: #e9dd3d;
+    margin-bottom: 25px;
+}
+
+.card .quote {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 27px;
+}
+
+.card .controllers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -6rem;
+    margin-bottom: 6rem;
+    margin-left: -3.3rem;
+    margin-right: -3.3rem;
+}
+
+.controllers a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, .69);
+    padding: 8px 15px;
+}
+
+.controllers a:last-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.controllers a:first-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.card .rev_counter {
+    padding-top: 3.5rem;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #d1cccc;
+}
+
+.card .rev_counter .number {
+    color: aqua;
+    font-size: 25px;
+}
