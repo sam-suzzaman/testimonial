@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>|| Random Quotes Generator ||</title>
 
+
+    <!-- animate.css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <!-- stylesheet generator -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,28 +20,29 @@
         <div class="card-wrapper">
             <h4>client</h4>
             <h2>testimonials</h2>
-            <div class="card">
-                <img src="img/1.png" alt="">
+            <div class="card animate__animated">
+                <div class="img"></div>
                 <div class="text">
-                    <h3 class="name">customer name</h3>
+                    <h3 class="name animate__animated">customer name</h3>
                     <p class="rating">star rating</p>
-                    <p class="quote">
+                    <p class="quote animate__animated">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam porro atque exercitationem
                         iusto maxime non voluptatum laudantium excepturi quidem vitae.
                     </p>
 
                     <div class="controllers">
-                        <a href="" class="prev">p</a>
-                        <a href="" class="nxt">n</a>
+                        <a href="" class="prev controller">p</a>
+                        <a href="" class="nxt controller">n</a>
                     </div>
-                    <h3 class="rev_counter">review number: <span class="number">1</span></h3>
+                    <h3 class="rev_counter">review number: <span class="number"></span></h3>
                 </div>
             </div>
         </div>
     </div>
 
 
-
+    <!-- animate file -->
+    <script src="anime.min.js"></script>
     <!-- js file -->
     <script src="main.js"></script>
 </body>
