@@ -29,42 +29,58 @@ let customerRating = document.querySelector('.rating')
 let customerName = document.querySelector('.name')
 let customerQuote = document.querySelector('.quote')
 let reviewCounter = document.querySelector('.number')
-let addAnimation = document.querySelector('.card')
 
-let controller = document.querySelectorAll('.controller')
+// take i=1 cause when click next then value of i will be i=0 
+let i = -1
+
+// access the buttons
+let controller = document.querySelectorAll('.controllers')
 controller.forEach(function (value) {
-    value.addEventListener('click', myFun)
+    value.addEventListener('click', function (e) {
+        e.preventDefault()
+        let clicked = e.target.innerHTML
+
+        if (clicked === 'p') {
+            i--
+            if (i < 0) {
+                i = slider_content_arr.length - 1
+            }
+
+            // changing contents
+            customerAvater.style.backgroundImage = `url('img/${slider_content_arr[i].pic}.png')`
+            customerName.textContent = slider_content_arr[i].name
+            customerQuote.textContent = slider_content_arr[i].quote
+            reviewCounter.textContent = i + 1
+            customerRating.textContent = slider_content_arr[i].rating
+
+        } else if (clicked === 'n') {
+            i++
+            if (i > slider_content_arr.length - 1) {
+                i = 0
+            }
+
+            // changing  contents
+            customerAvater.style.backgroundImage = `url('img/${slider_content_arr[i].pic}.png')`
+            customerName.textContent = slider_content_arr[i].name
+            customerQuote.textContent = slider_content_arr[i].quote
+            reviewCounter.textContent = i + 1
+            customerRating.textContent = slider_content_arr[i].rating
+
+        }
+
+        // adding animation classes
+        customerAvater.classList.add("animate__animated", "animate__backInLeft")
+        customerName.classList.add("animate__animated", "animate__bounceInDown")
+        customerQuote.classList.add("animate__animated", "animate__bounceInUp")
+        customerRating.classList.add("animate__animated", "animate__backInRight")
+
+        // removing animation classes
+        customerName.addEventListener('animationend', () => {
+            customerAvater.classList.remove("animate__backInLeft")
+            customerName.classList.remove("animate__bounceInDown")
+            customerQuote.classList.remove("animate__bounceInUp")
+            customerRating.classList.remove("animate__backInRight")
+        })
+
+    })
 })
-
-let i = 0
-
-function myFun(e) {
-    // to stop auto reload the page
-    e.preventDefault()
-
-    let clickedButon = e.target.innerHTML
-    if (clickedButon === 'p') {
-        changeContent(i)
-        i--
-        if (i < 0) {
-            i = slider_content_arr.length - 1
-        }
-    } else {
-        changeContent(i)
-        i++
-        if (i > slider_content_arr.length - 1) {
-            i = 0
-        }
-    }
-
-    // adding animation
-    customerName.classList.add("animate__bounceInDown")
-}
-
-function changeContent(index) {
-    customerAvater.style.backgroundImage = `url('img/${slider_content_arr[i].pic}.png')`
-    customerName.textContent = slider_content_arr[index].name
-    customerQuote.textContent = slider_content_arr[index].quote
-    reviewCounter.textContent = index + 1
-    customerRating.textContent = slider_content_arr[i].rating
-}

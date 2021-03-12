@@ -84,6 +84,7 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 27px;
+    padding: 0 20px;
 }
 
 .card .controllers {
